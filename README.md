@@ -1,14 +1,13 @@
 # Shortest Path Algorithm
+Dijkstra’s Algorithm is a pathfinding algorithm that finds the shortest path from the given source node to every other node in the graph.
 
 I had practiced BFS algorithm with the [Binary Tree](https://github.com/egemen-github/binary_search_trees) and [Knight Travails](https://github.com/egemen-github/knights_travails) projects before. However, those graph projects were not involving weighted edges.
 
 This project is all about weighted edges (e.g., vertices are not equally distanced, or cost of reaching the next node varies) which also means it's way more challenging. 
 
-I am trying to come up with a solution right now.
+**Edit 1**: I was able to come up with a logic but stil far away from the solution. I was thinking of using the objects in this project and I might be taking the wrong approach as I'm just using arrays.
 
-Edit 1: I was able to come up with a logic but stil far away from the solution. I was thinking of using the objects in this project and I might be taking the wrong approach as I'm just using arrays.
-
-Edit 2: Completed the Dijkstra's algorithm.
+**Edit 2**: Completed the Dijkstra's algorithm.
 
 ## How it works?
 * Mark all nodes/vertices unvisited.
@@ -33,9 +32,8 @@ If there is a path from `U` --> `V` then `cost[u] + c[u,v] < cost[v]`
 ### About the implementation
 * Because I used arrays to store the necessary information to keep track of the nodes e.g., *current minimum value from the source*, and *parent of the visited node*, this only works with **sequential labels** (0 to N).
 * In the example below where node Memphis is labeled with 0, New Orleans with 1 and there is a connection at the cost of $3.
-* In the code it has to be like this `CITIES = ["Memphis", "Neworelans", "Mobile", "Atlanta", "Nashvile", "Savannah"]`
 * To store the edge between Memphis and New Orleans, `add_edge(adacency, 0, 1, 3)`
-* This algorithm works for where the soruce node Memphis at the index of '0'. Finds the shortest path from Memphis to anywhere.
+* Finds the shortest path from source (Memphis) to **every other node** in the graph.
 * If you want to find the shortest path from for example Atlanta, you have to relabel the graph and make Atlanta the source node at the index of '0'.
 
 <p align="center">
