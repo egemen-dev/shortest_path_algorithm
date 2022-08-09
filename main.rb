@@ -1,5 +1,6 @@
 INFINITY = 999_999_999
-CITIES = ["Memphis", "Neworelans", "Mobile", "Atlanta", "Nashvile", "Savannah"]
+
+# Create the adacency list
 
 def add_edge(adacency, u, v, weight)
   adacency[u].<<([v, weight])
@@ -32,20 +33,9 @@ vertices.times do
   itr += 1
 end
 
-# Create the graph by adding edges
-add_edge(adacency, 0, 1, 3)
-add_edge(adacency, 0, 2, 7)
-add_edge(adacency, 0, 3, 10)
-add_edge(adacency, 0, 4, 15)
-add_edge(adacency, 1, 2, 3)
-add_edge(adacency, 3, 4, 1)
-add_edge(adacency, 2, 3, 2)
-add_edge(adacency, 5, 2, 6)
-adacency_list = add_edge(adacency, 5, 3, 1)
-
-print_graph(adacency_list, vertices)
-
 # -------------------------------------
+
+# Dijkstra's algorithm
 
 def select_min_vertex(value, porcessed)
   indexes = []
@@ -125,5 +115,25 @@ def dijkstra(graph, source, destination)
 
   print_result(parent_nodes, expense, source, destination)
 end           
+
+
+# -------------------------------------
+
+
+# Add city names in sequential order
+CITIES = ["Memphis", "Neworelans", "Mobile", "Atlanta", "Nashvile", "Savannah"]
+
+# Create the graph by adding edges
+add_edge(adacency, 0, 1, 3)
+add_edge(adacency, 0, 2, 7)
+add_edge(adacency, 0, 3, 10)
+add_edge(adacency, 0, 4, 15)
+add_edge(adacency, 1, 2, 3)
+add_edge(adacency, 3, 4, 1)
+add_edge(adacency, 2, 3, 2)
+add_edge(adacency, 5, 2, 6)
+adacency_list = add_edge(adacency, 5, 3, 1)
+
+print_graph(adacency_list, vertices)
 
 dijkstra(adacency_list, 0, 5)
