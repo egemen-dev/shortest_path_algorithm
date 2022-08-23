@@ -27,7 +27,7 @@ This project is all about weighted edges (e.g., vertices are not equally distanc
 6. Retrun it.
 
 ### How to update adjacent vertices?
-If there is a path from `U` --> `V` then `cost[u] + c[u,v] < cost[v]`
+If there is a new shortest path from `U` --> `V` like so `cost[u] + c[u,v] < cost[v]`, then `cost[v] = cost[u] + c[u,v]` executes to update the cost of the `V`.
 
 ### About the implementation
 * Because I used arrays to store the necessary information to keep track of the nodes e.g., *current minimum value from the source*, and *parent of the visited node*, this only works with **sequential labels** (0 to N).
